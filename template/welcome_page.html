@@ -1,0 +1,51 @@
+
+{% extends "bootstrap/base.html" %}
+
+
+{% import "bootstrap/wtf.html" as wtf %} 
+
+{% block title %}
+	My App
+{% endblock %}
+
+
+{% block content %}
+
+    <h1> Machine Learning model </h1>
+    
+    <br>
+    <br>
+	<div>
+    {% block description %}
+    The model purpose is to predict if a chemical is ready biodegradable or not.
+    <br>
+    <br>
+    {% endblock %}
+    </div>
+        {% block parameters %}
+        The parameters used to predict the value are :
+        <br>
+        <br>
+
+        <ul>
+            {% for feature in descr %}
+                <li> {{feature}}</li>
+            {% endfor %}
+        </ul>
+        {%endblock%}
+
+
+    
+    <br>
+    <br>
+    <p><h4>Test it now by clicking here ! </h4></p>
+
+    <br>
+    <br>
+    
+    {{ wtf.quick_form(form) }}
+    <br>
+    <br>
+
+{% endblock %}
+

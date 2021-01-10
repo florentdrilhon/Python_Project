@@ -1,0 +1,66 @@
+{% extends "bootstrap/base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %} 
+
+{% block title %}
+	Predictions
+{% endblock %}
+
+{% block content %}
+    <br>
+    <h2>Predictions</h2>
+    <br>
+    <br>
+
+
+	<h4> Features  </h4>
+	<div>
+    </div>
+    {% block features %}
+        The parameters randomly set to predict the value are :
+        <br>
+        <br>
+
+        
+    {%endblock%}
+
+    <br>
+    <br>
+    <table class="table table-striped">
+        <tr>
+          <th>Feature</th>
+          <th>Value</th>
+          
+        </tr>
+        {% for cle,valeur in X.items() %}
+        <tr>
+         <td>{{cle}}</td>
+         <td>{{valeur}}</td>
+        </tr>
+
+        {% endfor %}
+        
+      </table>
+
+
+    <br>
+    <br>
+
+    {% block result%}
+
+      <div class="alert alert-success" role="alert">
+    <a href="#" class="alert-link">With this parameters, the target chemical is <strong>ready biodegradable</strong></a>
+      </div>
+
+    {% endblock%}
+
+    <br>
+    <br>
+    
+    {{ wtf.quick_form(form) }}
+    <br>
+    <br>
+
+        
+
+{% endblock %}
