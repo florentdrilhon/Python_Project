@@ -8,6 +8,8 @@ The objective I chose is to act on f1-score and the accuracy to provide a polyva
 
 To analyse the dataset and construct the model I followed an approach described in the report.pdf file.
 
+The code and the construction of the model is in the "python_project.ipynb" jupyter notebook. 
+
 To synthetise here is the summary and some conclusions about the different steps:
 
 **Data exploratory:**
